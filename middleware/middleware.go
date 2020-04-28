@@ -122,7 +122,6 @@ func DeleteAllTask(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	count := deleteAllTask()
 	json.NewEncoder(w).Encode(count)
-	// json.NewEncoder(w).Encode("Task not found")
 
 }
 
@@ -140,7 +139,6 @@ func getAllTask() []primitive.M {
 		if e != nil {
 			log.Fatal(e)
 		}
-		// fmt.Println("cur..>", cur, "result", reflect.TypeOf(result), reflect.TypeOf(result["_id"]))
 		results = append(results, result)
 
 	}
